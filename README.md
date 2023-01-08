@@ -20,12 +20,7 @@ Extract from https://www.baeldung.com/java-timer-and-timertask#repeat
 <div class="bd-anchor" id="repeat"></div>
 <p>Now that we've covered how to schedule the single execution of a task, let's see how to deal with repeatable tasks.</p>
 <p>Once again, the <em>Timer</em> class offers multiple possibilities. We can set up the repetition to observe either a fixed delay or a fixed rate.</p>
-<p><strong>A fixed delay means that the execution will start a period of time after the moment the last execution started, even if it was delayed (therefore being itself delayed)</strong>.</p><div class='code-block code-block-4' style='margin: 8px 0; clear: both;'>
-<div align="center" data-freestar-ad="__300x250 __336x280" id="baeldung_leaderboard_mid_3">
-<script data-cfasync="false" type="text/javascript">
-    freestar.config.enabled_slots.push({ placementName: "baeldung_leaderboard_mid_3", slotId: "baeldung_leaderboard_mid_3" });
-  </script>
-</div></div>
+<p><strong>A fixed delay means that the execution will start a period of time after the moment the last execution started, even if it was delayed (therefore being itself delayed)</strong>.</p>
 <p>Let's say we want to schedule a task every two seconds, with the first execution taking one second and the second one taking two, but being delayed by one second. Then the third execution starts at the fifth second:</p>
 <pre><code class="language-plaintext">0s     1s    2s     3s           5s
 |--T1--|
@@ -71,12 +66,7 @@ Email sent at: 2020-01-01T10:50:33.861</code></pre>
 <p>As we can see, there's at least one second between each execution, but they're sometimes delayed by a millisecond. <strong>This phenomenon is due to our decision to used fixed-delay repetition.</strong></p>
 <h3 id="bd-repeat-fixed-rate" data-id="repeat-fixed-rate">3.2. With a Fixed Rate</h3>
 <div class="bd-anchor" id="repeat-fixed-rate"></div>
-<p>Now what if we were to use a fixed-rate repetition? Then we would have to use the <em>scheduledAtFixedRate()</em> method:</p><div class='code-block code-block-6' style='margin: 8px 0; clear: both;'>
-<div align="center" data-freestar-ad="__336x280 __336x280" id="baeldung_incontent_2">
-<script data-cfasync="false" type="text/javascript">
-    freestar.config.enabled_slots.push({ placementName: "baeldung_incontent_2", slotId: "baeldung_incontent_2" });
-  </script>
-</div></div>
+<p>Now what if we were to use a fixed-rate repetition? Then we would have to use the <em>scheduledAtFixedRate()</em> method:</p>
 <pre><code class="language-java">new Timer().scheduleAtFixedRate(new NewsletterTask(), 0, 1000);
 
 for (int i = 0; i &lt; 3; i++) {
