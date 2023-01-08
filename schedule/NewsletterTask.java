@@ -11,5 +11,10 @@ public class NewsletterTask extends TimerTask {
         System.out.println("Email sent at: " 
           + LocalDateTime.ofInstant(Instant.ofEpochMilli(scheduledExecutionTime()), 
           ZoneId.systemDefault()));
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            System.out.println("Sleep interrupted");
+        }
     }
 }
